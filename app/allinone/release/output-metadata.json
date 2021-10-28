@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.allinone.allinoneglobalmarket",
+  "variantName": "allinoneRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 40,
+      "versionName": "4.0",
+      "outputFile": "app-allinone-release.apk"
+    }
+  ],
+  "elementType": "File"
+}

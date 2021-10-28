@@ -23,8 +23,8 @@ android {
         }
         allinone {
             applicationId "com.allinone.allinoneglobalmarket"
-            versionCode 45
-            versionName "4.5"
+            versionCode 40
+            versionName "4.0"
         }
     }
     signingConfigs {
