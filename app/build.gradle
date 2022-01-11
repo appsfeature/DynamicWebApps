@@ -26,6 +26,11 @@ android {
             versionCode 101
             versionName "4.01"
         }
+        netbook {
+            applicationId "com.appsfeature.netbook"
+            versionCode 1
+            versionName "1.0"
+        }
     }
     signingConfigs {
         bharatsamachartv {
@@ -40,6 +45,12 @@ android {
             keyAlias "key0"
             keyPassword "123456"
         }
+        netbook {
+            storeFile file("../keystore/netbook.jks")
+            storePassword "netbook"
+            keyAlias "netbook"
+            keyPassword "netbook"
+        }
     }
 
     buildTypes {
@@ -48,6 +59,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             productFlavors.bharatsamachartv.signingConfig signingConfigs.bharatsamachartv
             productFlavors.allinone.signingConfig signingConfigs.allinone
+            productFlavors.netbook.signingConfig signingConfigs.netbook
         }
     }
     compileOptions {
