@@ -8,7 +8,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        minSdk 17
+        minSdk 19
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -18,8 +18,8 @@ android {
     productFlavors {
         bharatsamachartv {
             applicationId "com.uttarpradeshtv"
-            versionCode 40
-            versionName "4.0"
+            versionCode 41
+            versionName "4.1"
         }
         allinone {
             applicationId "com.allinone.allinoneglobalmarket"
@@ -78,7 +78,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation "com.google.firebase:firebase-crashlytics:$rootProject.ext.fb_crashlytics_version"
-    implementation 'com.github.appsfeature:browser:2.0'
+    implementation 'com.github.appsfeature:browser:2.9'
 
     bharatsamachartvImplementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
 }

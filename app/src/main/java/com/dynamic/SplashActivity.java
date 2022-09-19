@@ -6,7 +6,6 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.browser.BrowserSdk;
 import com.dynamic.util.SupportUtil;
 
 public class SplashActivity extends AppCompatActivity {
@@ -16,18 +15,24 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(SupportUtil.isBharatTV(this)){
-            setContentView(R.layout.activity_splash);
-            mp = MediaPlayer.create(SplashActivity.this, R.raw.notification);
-            mp.start();
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    openActivity();
+        try {
+            if(SupportUtil.isBharatTV(this)){
+                setContentView(R.layout.activity_splash);
+                mp = MediaPlayer.create(SplashActivity.this, R.raw.notification);
+                if (mp != null) {
+                    mp.start();
                 }
-            }, 2000);
-        }else{
-            openActivity();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        ClassUtil.openBrowser(SplashActivity.this);
+                    }
+                }, 2000);
+            }else{
+                ClassUtil.openBrowser(SplashActivity.this);
+            }
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
         }
     }
 
@@ -37,10 +42,5 @@ public class SplashActivity extends AppCompatActivity {
         if (mp != null) {
             mp.stop();
         }
-    }
-
-    private void openActivity() {
-        BrowserSdk.open(this, null, AppValues.APP_URL);
-        finish();
     }
 }

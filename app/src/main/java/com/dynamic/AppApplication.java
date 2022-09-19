@@ -10,6 +10,8 @@ public class AppApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        BrowserSdk.getInstance().setDebugMode(BuildConfig.DEBUG);
+        BrowserSdk.getInstance()
+                .setEnableErrorLayoutOverlay(false)
+                .setDebugMode(BuildConfig.DEBUG);
     }
 }
