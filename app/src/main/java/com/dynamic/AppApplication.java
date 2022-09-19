@@ -11,7 +11,7 @@ public class AppApplication extends Application {
     public void onCreate() {
         super.onCreate();
         BrowserSdk.getInstance()
-                .setEnableErrorLayoutOverlay(false)
+                .setEnableErrorLayoutOverlay(AppValues.isEnableErrorLayoutOverlay)
                 .setDebugMode(BuildConfig.DEBUG);
     }
 }
